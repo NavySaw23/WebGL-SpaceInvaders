@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Space Invaders</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+    }
+
+    canvas {
+      display: block;
+      margin: 0 auto;
+    }
+
+    #score {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+    }
+
+    #message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 32px;
+      color: white;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="score">Score: 0</div>
+  <div id="message"></div>
+  <audio id="bgm" loop>
+    <source src="./static/bgm.mp3">
+  </audio>
+  <canvas id="canvas"></canvas>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"></script>
+  <script src="game.js"></script>
+  <script>
+    const bgm = document.getElementById('bgm');
+    bgm.play();
+    bgm.loop = true;
+  </script>
+</body>
+
+</html>
